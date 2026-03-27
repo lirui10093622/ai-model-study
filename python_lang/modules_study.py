@@ -1,4 +1,6 @@
-import sys
+import my_module as mm
 
-for x in sys.modules:
-    print(x)
+mm.hello()
+
+print(mm.__dict__)
+print(mm.__doc__)

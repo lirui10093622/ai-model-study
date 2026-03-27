@@ -1,4 +1,4 @@
-import socket_study
+import socket
 
 s = socket.socket()
 s.bind(('localhost', 8080))
