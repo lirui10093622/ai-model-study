@@ -1,0 +1,43 @@
+import numpy as np
+
+def create_dtype(dtype):
+  dt = np.dtype(dtype)
+  print(f"{dtype} ==> name: {dt.name}, kind: {dt.kind}, base: {dt.base}, byteorder: {dt.byteorder}, itemSize: {dt.itemsize}, str: {dt.str}, type: {dt.type}, descr: {dt.descr}")
+
+print('single char:')
+create_dtype('?')
+create_dtype('b1')
+create_dtype('b')
+create_dtype('i')
+create_dtype('f')
+create_dtype('c')
+create_dtype('m')
+create_dtype('M')
+create_dtype('O')
+create_dtype('S')
+create_dtype('T')
+create_dtype('U')
+create_dtype('V')
+print('------------')
+# 整数
+
+print('builtins type:')
+create_dtype(bool)
+create_dtype(int)
+create_dtype(float)
+create_dtype(complex)
+create_dtype(str)
+create_dtype(bytes)
+create_dtype(object)
+print('------------')
+
+create_dtype('int32')
+create_dtype('i4')
+create_dtype('<i4')
+create_dtype('>i4')
+create_dtype('int64')
+create_dtype('i8')
+create_dtype('<i8')
+create_dtype('>i8')
+create_dtype('S3')
+create_dtype('S4')
