@@ -1,7 +1,13 @@
-from transformers import *
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 
-name = "er/roberta-base-finetuned-ifeng-chinese"
-model = AutoModelForSequenceClassification.from_pretrained(pretrained_model_name_or_path = name, tokenizer = tokenizer)
+name = "uer/roberta-base-finetuned-ifeng-chinese"
+
 tokenizer = AutoTokenizer.from_pretrained(name)
-result = model("今天天气不错")
+
+model = AutoModelForSequenceClassification.from_pretrained(name)
+
+pipe = pipeline("text-classification", model=model, tokenizer=tokenizer)
+
+result = pipe("今天天气不错")
+
 print(result)

@@ -3,6 +3,7 @@ import time
 import torch
 from transformers import pipeline
 
+
 def print_time(pipe):
     times = []
     for i in range(1000):
@@ -15,6 +16,7 @@ def print_time(pipe):
         end = time.time()
         times.append(end - start)
     print(sum(times) / 1000)
+
 
 # 指定设备为CPU
 pipe = pipeline("text-classification", device='cpu')
